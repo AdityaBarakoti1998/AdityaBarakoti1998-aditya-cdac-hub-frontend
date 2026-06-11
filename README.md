@@ -1,16 +1,55 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### 1. Frontend README (`README.md` for the React Repo)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```markdown
+# CDAC Hub - Frontend 🎨
 
-## React Compiler
+The user interface for the CDAC Student Project Repository. This is where students submit their hard work, reviewers evaluate it, and the public can browse the approved projects. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Tech Stack
+* **React** (scaffolded with Vite for speed)
+* **Tailwind CSS** (for styling)
+* **React Router v6** (for navigation)
+* **Axios** (for API calls)
+* **Context API** (for global user/auth state)
 
-## Expanding the ESLint configuration
+### Core Features
+* **Public Feed:** Searchable grid of all approved CDAC projects.
+* **Student Dashboard:** Track personal project submissions and statuses.
+* **Reviewer Panel:** Dedicated interface for reviewers to evaluate pending projects and leave feedback.
+* **Admin Panel:** Table view to manage user roles directly from the UI.
+* **JWT Interceptor:** Axios automatically attaches the user's JWT token to protected API requests.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Local Setup Instructions
+
+1. **Clone the repo:**
+   ```bash
+   git clone <your-repo-url>
+   cd cdachub-frontend
+
+```
+
+2. **Install Dependencies:**
+```bash
+npm install
+
+```
+
+
+3. **Connect to Backend:**
+By default, the Axios configuration in `src/services/api.js` points to `http://localhost:8080`. Make sure your Spring Boot backend is running on that port before you try to log in or fetch data.
+4. **Run the App:**
+```bash
+npm run dev
+
+```
+
+
+Open `http://localhost:5173` in your browser.
+
+### A Note on Logging In Locally
+
+Authentication is handled via Google OAuth2 on the backend. When you click "Login with Google", it briefly redirects to `localhost:8080` to authenticate with Google, grabs the JWT token, and bounces you back to the frontend `/auth/callback` route.
+
+```
