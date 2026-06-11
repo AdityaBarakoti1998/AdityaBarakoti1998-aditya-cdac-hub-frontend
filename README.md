@@ -3,7 +3,7 @@
 ### 1. Frontend README (`README.md` for the React Repo)
 
 ```markdown
-# CDAC Hub - Frontend 🎨
+# CDAC Hub - Frontend 
 
 The user interface for the CDAC Student Project Repository. This is where students submit their hard work, reviewers evaluate it, and the public can browse the approved projects. 
 
